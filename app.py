@@ -166,7 +166,7 @@ st.subheader("Quality Analytics")
 
 chart_col1, chart_col2 = st.columns(2)
 
-# Pareto-style category analysis
+# Pareto analysis
 category_summary = (
     filtered_df["category"]
     .value_counts()
@@ -183,16 +183,63 @@ category_summary["Cumulative %"] = (
 with chart_col1:
     st.markdown("#### NCR Category Pareto")
 
-    pareto_fig = px.bar(
-        category_summary,
-        x="Category",
-        y="NCR Count",
-        title="Nonconformances by Category"
+    from plotly.subplots import make_subplots
+    import plotly.graph_objects as go
+
+    pareto_fig = make_subplots(
+        specs=[[{"secondary_y": True}]]
+    )
+
+    # Frequency bars
+    pareto_fig.add_trace(
+        go.Bar(
+            x=category_summary["Category"],
+            y=category_summary["NCR Count"],
+            name="NCR Count"
+        ),
+        secondary_y=False
+    )
+
+    # Cumulative percentage line
+    pareto_fig.add_trace(
+        go.Scatter(
+            x=category_summary["Category"],
+            y=category_summary["Cumulative %"],
+            name="Cumulative %",
+            mode="lines+markers"
+        ),
+        secondary_y=True
+    )
+
+    # 80% reference line
+    pareto_fig.add_hline(
+        y=80,
+        line_dash="dash",
+        annotation_text="80%",
+        secondary_y=True
+    )
+
+    pareto_fig.update_xaxes(
+        title_text="Category",
+        tickangle=-45
+    )
+
+    pareto_fig.update_yaxes(
+        title_text="NCR Count",
+        secondary_y=False
+    )
+
+    pareto_fig.update_yaxes(
+        title_text="Cumulative %",
+        range=[0, 105],
+        ticksuffix="%",
+        secondary_y=True
     )
 
     pareto_fig.update_layout(
-        xaxis_tickangle=-45,
-        showlegend=False
+        title="Nonconformance Category Pareto",
+        legend_orientation="h",
+        legend_y=1.15
     )
 
     st.plotly_chart(
