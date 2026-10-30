@@ -185,7 +185,7 @@ category_summary["Cumulative %"] = (
 with chart_col1:
     st.markdown("#### NCR Category Pareto")
 
-      pareto_fig = make_subplots(
+    pareto_fig = make_subplots(
         specs=[[{"secondary_y": True}]]
     )
 
