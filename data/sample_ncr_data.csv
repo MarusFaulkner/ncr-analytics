@@ -1,1 +1,51 @@
-
+ncr_id,sales_order,component,category,severity,disposition,status,date_found,date_closed,assigned_to
+NCR-2026-001,SO10186457,Bushing H1,Surface Finish,Minor,Rework,Closed,2026-09-02,2026-09-07,Paint Dept
+NCR-2026-002,SO10185610,Radiator Bank,Missing Component,Major,Pending,Open,2026-09-05,,Purchasing
+NCR-2026-003,SO10184042,Conservator,Pressure Test,Critical,Rework,Closed,2026-08-20,2026-08-25,Welding Dept
+NCR-2026-004,SO10186671,Arrester Support,Missing Hardware,Major,Pending,In Progress,2026-09-15,,Production
+NCR-2026-005,SO10186457,Stud Bolt Position 4,Dimensional,Minor,Scrap,Closed,2026-09-10,2026-09-12,Production
+NCR-2026-006,SO10187141,Conservator Gas Pipe,Torque,Major,Rework,In Progress,2026-09-20,,Production
+NCR-2026-007,SO10186671,Tag 127,Traceability,Minor,Accept As-Is,Closed,2026-09-22,2026-09-23,QA
+NCR-2026-008,SO10187905,Winding Insulation,Visual Inspection,Critical,Pending,Open,2026-10-01,,Engineering
+NCR-2026-009,SO10185610,Radiator Support,Corrosion,Minor,Rework,Closed,2026-09-05,2026-09-07,Production
+NCR-2026-010,SO10187905,Gasket Set,Quantity Shortage,Major,Pending,Open,2026-10-15,,Purchasing
+NCR-2026-011,SO10180112,Main Tank,Surface Finish,Minor,Rework,Closed,2026-05-06,2026-05-09,Paint Dept
+NCR-2026-012,SO10180235,Bushing Mounting Plate,Dimensional,Major,Rework,Closed,2026-05-11,2026-05-18,Production
+NCR-2026-013,SO10180348,Grounding Hardware,Missing Hardware,Minor,Rework,Closed,2026-05-14,2026-05-16,Production
+NCR-2026-014,SO10180421,Pressure Relief Device,Torque,Major,Rework,Closed,2026-05-19,2026-05-24,Production
+NCR-2026-015,SO10180567,Shipping Crate,Visual Inspection,Minor,Accept As-Is,Closed,2026-05-25,2026-05-26,QA
+NCR-2026-016,SO10180714,Radiator Assembly,Corrosion,Major,Rework,Closed,2026-06-02,2026-06-08,Production
+NCR-2026-017,SO10180855,Terminal Hardware,Missing Hardware,Major,Rework,Closed,2026-06-05,2026-06-10,Production
+NCR-2026-018,SO10180972,Nameplate,Traceability,Minor,Rework,Closed,2026-06-09,2026-06-10,QA
+NCR-2026-019,SO10181106,Conservator Tank,Pressure Test,Critical,Rework,Closed,2026-06-13,2026-06-22,Welding Dept
+NCR-2026-020,SO10181243,Busbar Support,Dimensional,Major,Scrap,Closed,2026-06-18,2026-06-21,Production
+NCR-2026-021,SO10181487,Gasket Kit,Quantity Shortage,Minor,Rework,Closed,2026-06-24,2026-06-27,Purchasing
+NCR-2026-022,SO10181629,Main Tank Cover,Surface Finish,Minor,Rework,Closed,2026-07-01,2026-07-03,Paint Dept
+NCR-2026-023,SO10181765,Bushing Hardware,Torque,Major,Rework,Closed,2026-07-05,2026-07-09,Production
+NCR-2026-024,SO10181901,Cooling Fan Assembly,Missing Component,Major,Return to Vendor,Closed,2026-07-08,2026-07-18,Purchasing
+NCR-2026-025,SO10182046,Control Cabinet Wiring,Visual Inspection,Major,Rework,Closed,2026-07-12,2026-07-16,Engineering
+NCR-2026-026,SO10182211,Core Clamp,Dimensional,Critical,Rework,Closed,2026-07-17,2026-07-26,Engineering
+NCR-2026-027,SO10182354,Shipping Identification,Traceability,Minor,Rework,Closed,2026-07-22,2026-07-23,QA
+NCR-2026-028,SO10182509,Radiator Flange,Corrosion,Minor,Rework,Closed,2026-07-28,2026-07-31,Paint Dept
+NCR-2026-029,SO10182743,Lifting Lug,Weld Quality,Major,Rework,Closed,2026-08-02,2026-08-09,Welding Dept
+NCR-2026-030,SO10182976,Terminal Connector,Torque,Minor,Rework,Closed,2026-08-05,2026-08-07,Production
+NCR-2026-031,SO10183128,Main Tank Weld,Weld Quality,Critical,Rework,Closed,2026-08-08,2026-08-18,Welding Dept
+NCR-2026-032,SO10183364,Bushing H2,Surface Finish,Minor,Rework,Closed,2026-08-12,2026-08-14,Paint Dept
+NCR-2026-033,SO10183517,Accessory Hardware,Missing Hardware,Major,Rework,Closed,2026-08-16,2026-08-21,Production
+NCR-2026-034,SO10183759,Oil Level Gauge,Visual Inspection,Minor,Accept As-Is,Closed,2026-08-23,2026-08-25,QA
+NCR-2026-035,SO10183902,Radiator Valve,Pressure Test,Major,Rework,Closed,2026-08-27,2026-09-03,Production
+NCR-2026-036,SO10184267,Ground Pad,Dimensional,Major,Rework,Closed,2026-09-01,2026-09-06,Production
+NCR-2026-037,SO10184511,Main Tank Exterior,Surface Finish,Minor,Rework,Closed,2026-09-04,2026-09-08,Paint Dept
+NCR-2026-038,SO10184832,Control Cabinet Label,Traceability,Major,Rework,Closed,2026-09-08,2026-09-11,QA
+NCR-2026-039,SO10185176,Conservator Bracket,Weld Quality,Major,Rework,In Progress,2026-09-12,,Welding Dept
+NCR-2026-040,SO10185420,Bushing Hardware,Torque,Major,Rework,Closed,2026-09-18,2026-09-22,Production
+NCR-2026-041,SO10185863,Cooling Fan,Missing Component,Major,Return to Vendor,Open,2026-09-24,,Purchasing
+NCR-2026-042,SO10186107,Terminal Block,Dimensional,Minor,Use As-Is with Deviation,Closed,2026-09-27,2026-09-30,Engineering
+NCR-2026-043,SO10187486,Radiator Frame,Corrosion,Major,Rework,In Progress,2026-10-03,,Paint Dept
+NCR-2026-044,SO10187621,Main Tank Weld,Weld Quality,Critical,Rework,In Progress,2026-10-06,,Welding Dept
+NCR-2026-045,SO10188048,Accessory Box,Quantity Shortage,Major,Pending,Open,2026-10-09,,Purchasing
+NCR-2026-046,SO10188275,Bushing H3,Surface Finish,Minor,Rework,Closed,2026-10-12,2026-10-16,Paint Dept
+NCR-2026-047,SO10188416,Pressure Relief Flange,Torque,Major,Rework,In Progress,2026-10-18,,Production
+NCR-2026-048,SO10188652,Identification Tag,Traceability,Minor,Rework,Closed,2026-10-21,2026-10-22,QA
+NCR-2026-049,SO10188897,Control Wiring,Visual Inspection,Critical,Pending,Open,2026-10-24,,Engineering
+NCR-2026-050,SO10189134,Mounting Bracket,Dimensional,Major,Pending,Open,2026-10-28,,Production
