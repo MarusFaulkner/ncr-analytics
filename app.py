@@ -1,6 +1,8 @@
 import pandas as pd
 import streamlit as st
 import plotly.express as px
+import plotly.graph_objects as go
+from plotly.subplots import make_subplots
 
 # --------------------------------------------------
 # PAGE CONFIGURATION
@@ -183,10 +185,7 @@ category_summary["Cumulative %"] = (
 with chart_col1:
     st.markdown("#### NCR Category Pareto")
 
-    from plotly.subplots import make_subplots
-    import plotly.graph_objects as go
-
-    pareto_fig = make_subplots(
+      pareto_fig = make_subplots(
         specs=[[{"secondary_y": True}]]
     )
 
