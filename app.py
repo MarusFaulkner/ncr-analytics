@@ -1,5 +1,6 @@
 import pandas as pd
 import streamlit as st
+import plotly.express as px
 
 # --------------------------------------------------
 # PAGE CONFIGURATION
@@ -158,6 +159,101 @@ st.bar_chart(
     y="NCR Count"
 )
 
+# --------------------------------------------------
+# QUALITY ANALYTICS
+# --------------------------------------------------
+st.subheader("Quality Analytics")
+
+chart_col1, chart_col2 = st.columns(2)
+
+# Pareto-style category analysis
+category_summary = (
+    filtered_df["category"]
+    .value_counts()
+    .rename_axis("Category")
+    .reset_index(name="NCR Count")
+)
+
+category_summary["Cumulative %"] = (
+    category_summary["NCR Count"].cumsum()
+    / category_summary["NCR Count"].sum()
+    * 100
+)
+
+with chart_col1:
+    st.markdown("#### NCR Category Pareto")
+
+    pareto_fig = px.bar(
+        category_summary,
+        x="Category",
+        y="NCR Count",
+        title="Nonconformances by Category"
+    )
+
+    pareto_fig.update_layout(
+        xaxis_tickangle=-45,
+        showlegend=False
+    )
+
+    st.plotly_chart(
+        pareto_fig,
+        use_container_width=True
+    )
+
+# Severity analysis
+severity_summary = (
+    filtered_df["severity"]
+    .value_counts()
+    .rename_axis("Severity")
+    .reset_index(name="NCR Count")
+)
+
+with chart_col2:
+    st.markdown("#### Severity Breakdown")
+
+    severity_fig = px.pie(
+        severity_summary,
+        names="Severity",
+        values="NCR Count",
+        hole=0.55
+    )
+
+    st.plotly_chart(
+        severity_fig,
+        use_container_width=True
+    )
+
+# --------------------------------------------------
+# MONTHLY TREND
+# --------------------------------------------------
+st.markdown("#### Monthly NCR Trend")
+
+monthly_summary = (
+    filtered_df
+    .assign(
+        Month=filtered_df["date_found"].dt.to_period("M").astype(str)
+    )
+    .groupby("Month")
+    .size()
+    .reset_index(name="NCR Count")
+)
+
+trend_fig = px.line(
+    monthly_summary,
+    x="Month",
+    y="NCR Count",
+    markers=True
+)
+
+trend_fig.update_layout(
+    yaxis_title="NCR Count",
+    xaxis_title="Month"
+)
+
+st.plotly_chart(
+    trend_fig,
+    use_container_width=True
+)
 # --------------------------------------------------
 # DATA TABLE
 # --------------------------------------------------
