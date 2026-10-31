@@ -301,6 +301,40 @@ st.plotly_chart(
     use_container_width=True
 )
 # --------------------------------------------------
+# DISPOSITION ANALYSIS
+# --------------------------------------------------
+st.subheader("Disposition Analysis")
+
+disposition_summary = (
+    filtered_df["disposition"]
+    .value_counts()
+    .rename_axis("Disposition")
+    .reset_index(name="NCR Count")
+)
+
+disposition_fig = px.bar(
+    disposition_summary,
+    x="Disposition",
+    y="NCR Count",
+    text="NCR Count",
+    title="NCR Disposition Breakdown"
+)
+
+disposition_fig.update_layout(
+    xaxis_title="Disposition",
+    yaxis_title="NCR Count",
+    showlegend=False
+)
+
+disposition_fig.update_traces(
+    textposition="outside"
+)
+
+st.plotly_chart(
+    disposition_fig,
+    use_container_width=True
+)
+# --------------------------------------------------
 # DATA TABLE
 # --------------------------------------------------
 st.subheader("NCR Records")
