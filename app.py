@@ -353,3 +353,51 @@ st.dataframe(
     use_container_width=True,
     hide_index=True
 )
+# --------------------------------------------------
+# OPEN NCR RISK REVIEW
+# --------------------------------------------------
+st.subheader("Open NCR Risk Review")
+
+risk_df = filtered_df[
+    filtered_df["status"] != "Closed"
+].copy()
+
+severity_rank = {
+    "Critical": 3,
+    "Major": 2,
+    "Minor": 1
+}
+
+risk_df["severity_rank"] = (
+    risk_df["severity"]
+    .map(severity_rank)
+    .fillna(0)
+)
+
+risk_df = risk_df.sort_values(
+    by=["severity_rank", "days_open"],
+    ascending=[False, False]
+)
+
+risk_display = risk_df[
+    [
+        "ncr_id",
+        "component",
+        "category",
+        "severity",
+        "status",
+        "assigned_to",
+        "days_open",
+        "aging_bucket"
+    ]
+].copy()
+
+st.write(
+    f"**{len(risk_display)} active NCRs** prioritized by severity and age."
+)
+
+st.dataframe(
+    risk_display,
+    use_container_width=True,
+    hide_index=True
+)
