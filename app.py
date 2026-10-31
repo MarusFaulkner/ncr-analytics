@@ -17,8 +17,11 @@ st.set_page_config(
 # LOAD AND PREPARE NCR DATA
 # --------------------------------------------------
 @st.cache_data
-def load_data():
-    df = pd.read_csv("data/sample_ncr_data.csv")
+def load_data(uploaded_file=None):
+    if uploaded_file is not None:
+        df = pd.read_csv(uploaded_file)
+    else:
+        df = pd.read_csv("data/sample_ncr_data.csv")
 
     df["date_found"] = pd.to_datetime(df["date_found"])
     df["date_closed"] = pd.to_datetime(
@@ -45,8 +48,12 @@ def load_data():
     return df
 
 
-df = load_data()
+uploaded_file = st.sidebar.file_uploader(
+    "Upload NCR CSV",
+    type=["csv"]
+)
 
+df = load_data(uploaded_file)
 # --------------------------------------------------
 # SIDEBAR FILTERS
 # --------------------------------------------------
